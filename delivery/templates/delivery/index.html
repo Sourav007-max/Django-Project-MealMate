@@ -1,0 +1,17 @@
+{% extends 'delivery/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'delivery/css/style.css' %}">
+
+<div class="container mt-5">
+    <div class="welcome-box text-center">
+        <h1>Welcome to <span class="brand-name">MealMate</span></h1>
+        <p class="tagline">Your gateway to great food from nearby restaurants.</p>
+        <div class="button-group mt-4">
+            <a href="{% url 'delivery:sign_up' %}" class="btn btn-success btn-lg me-2">Sign Up</a>
+            <a href="{% url 'delivery:sign_in' %}" class="btn btn-outline-primary btn-lg">Sign In</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
