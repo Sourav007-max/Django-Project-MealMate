@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
     <link rel="stylesheet" href="{% static 'delivery/css/styles.css' %}" />
+    <!-- Optional Bootstrap for better design -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <title>Order Summary</title>
   </head>
   <body>
-    <h1>Thank you for your order, {{ username }}!</h1>
+    <div class="container mt-5">
+      <h1 class="text-center">Thank you for your order, {{ username }}!</h1>
 
-    <h2>Delivery Address</h2>
-    <p>{{ customer.address }}</p>
+      <h2>Delivery Address</h2>
+      <p>{{ customer.address }}</p>
 
-    <p>
-      Your order will be delivered to this location shortly. Thank you for
-      choosing Meal Mate!
-    </p>
+      <p>
+        Your order will be delivered to this location shortly. Thank you for
+        choosing Meal Mate!
+      </p>
 
-    {% if cart_items %}
-    <a href="{% url 'customer_menu' cart_items.0.restaurant.id username %}"
-      >Back to Restaurants</a
-    >
-    {% else %}
-    <a href="/">Back to Home</a>
-    {% endif %}
+      {% if cart_items %}
+        <a href="{% url 'customer_menu' cart_items.0.restaurant.id username %}" class="btn btn-primary">
+          Back to Restaurants
+        </a>
+      {% else %}
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+      {% endif %}
+    </div>
+
+    <!-- Optional: Bootstrap JavaScript for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

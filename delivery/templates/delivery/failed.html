@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Failed</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>❌ Login Failed</h1>
-    <p>Incorrect username or password. Please try again.</p>
-    <a href="{% url 'delivery:sign_in' %}">Back to Sign In</a>
+    <div class="container">
+        <h1>❌ Login Failed</h1>
+        <p>Incorrect username or password. Please try again.</p>
+        <a href="{% url 'delivery:sign_in' %}">Back to Sign In</a>
+    </div>
 </body>
 </html>

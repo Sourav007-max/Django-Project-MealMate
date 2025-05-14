@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Successful</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'delivery/css/styles.css' %}">
 </head>
 <body>
-    <h1>✅ Login Successful</h1>
-    <a href="{% url 'delivery:add_res' %}">Add Restaurants</a>
-    <a href="{% url 'delivery:display_res' %}">Showall Restaurants</a>
+    <div class="container">
+        <h1 class="text-success">✅ Login Successful</h1>
+        <p class="message">Welcome back! You have successfully logged in. Choose an action below:</p>
+        <div class="button-group">
+            <a href="{% url 'delivery:add_res' %}" class="btn btn-primary">Add Restaurant</a>
+            <a href="{% url 'delivery:display_res' %}" class="btn btn-secondary">Show All Restaurants</a>
+        </div>
+    </div>
 </body>
 </html>

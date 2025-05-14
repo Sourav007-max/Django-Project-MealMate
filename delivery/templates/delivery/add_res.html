@@ -1,23 +1,38 @@
 {% extends 'delivery/base.html' %}
+{% load static %}
+
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
+<div class="container">
+    <h2>Add New Restaurant</h2>
+    <form method="POST" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="id_Res_name">Restaurant Name:</label>
+            {{ form.Res_name }}
+        </div>
 
-    <label>Restaurant Name:</label>
-    {{ form.Res_name }}
+        <div class="form-group">
+            <label for="id_Food_cat">Food Category:</label>
+            {{ form.Food_cat }}
+        </div>
 
-    <label>Food Category:</label>
-    {{ form.Food_cat }}
+        <div class="form-group">
+            <label for="id_rating">Rating:</label>
+            {{ form.rating }}
+        </div>
 
-    <label>Rating:</label>
-    {{ form.rating }}
+        <div class="form-group">
+            <label for="id_img">Image:</label>
+            {{ form.img }}
+        </div>
 
-    <label>Image:</label>
-    {{ form.img }}
+        <div class="form-group">
+            <label for="id_address">Address:</label>
+            {{ form.address }}
+        </div>
 
-    <label>Address:</label>
-    {{ form.address }}
-    <button>Add</button>
-
-</form>
+        <button type="submit" class="button">Add</button>
+    </form>
+</div>
 {% endblock %}
